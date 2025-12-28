@@ -8,7 +8,7 @@ from sklearn.metrics import r2_score
 import numpy as np
 
 # --- Load merged dataset ---
-df = pd.read_csv("MERGED_DATA_FOR_LR_NEW.csv")
+df = pd.read_csv("MERGED_DATA_example.csv")
 
 # Rename diabetes_rate to diabetes_obesity_population_rate for clarity
 # This represents (diabetes+obesity patients) / population rate

@@ -1,0 +1,204 @@
+nohup: ignoring input
+/home/dou@chapman.edu/miniconda3/envs/pdou/lib/python3.10/site-packages/statsmodels/genmod/families/family.py:1367: ValueWarning: Negative binomial dispersion parameter alpha not set. Using default value alpha=1.0.
+  warnings.warn("Negative binomial dispersion parameter alpha not "
+/home/dou@chapman.edu/miniconda3/envs/pdou/lib/python3.10/site-packages/scipy/optimize/_optimize.py:1313: OptimizeWarning: Maximum number of iterations has been exceeded.
+  res = _minimize_bfgs(f, x0, args, fprime, callback=callback, **opts)
+/home/dou@chapman.edu/miniconda3/envs/pdou/lib/python3.10/site-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+
+Created binary variable: is_urban (Urban=1, Rural=0)
+  Urban: 4981 observations
+  Rural: 1227 observations
+  Unknown (excluded): 79 observations
+Dropping 'race_white' with VIF=95.73
+Dropping 'age_median' with VIF=87.06
+Dropping 'family_size' with VIF=73.96
+Dropping 'family_dual_income' with VIF=26.05
+Dropping 'income_household_median' with VIF=21.27
+Dropping 'education_highschool' with VIF=13.35
+Dropping 'education_some_college' with VIF=11.81
+Dropping 'education_bachelors' with VIF=10.23
+
+Final predictors after VIF reduction:
+ ['age_40s', 'age_50s', 'age_60s', 'poverty', 'unemployment_rate', 'education_graduate', 'race_black', 'race_asian', 'hispanic', 'health_uninsured', 'diabetes_obesity_population_rate', 'is_urban']
+
+OLS Results:
+                             OLS Regression Results                            
+==============================================================================
+Dep. Variable:            glp1ra_rate   R-squared:                       0.118
+Model:                            OLS   Adj. R-squared:                  0.116
+Method:                 Least Squares   F-statistic:                     68.17
+Date:                Mon, 22 Dec 2025   Prob (F-statistic):          1.01e-156
+Time:                        21:58:49   Log-Likelihood:                 28311.
+No. Observations:                6126   AIC:                        -5.660e+04
+Df Residuals:                    6113   BIC:                        -5.651e+04
+Df Model:                          12                                         
+Covariance Type:            nonrobust                                         
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+const                                0.0009      0.000      3.926      0.000       0.000       0.001
+age_40s                          -2.847e-06   7.81e-06     -0.365      0.715   -1.82e-05    1.25e-05
+age_50s                            1.61e-05   6.94e-06      2.319      0.020    2.49e-06    2.97e-05
+age_60s                          -6.606e-06   6.15e-06     -1.074      0.283   -1.87e-05    5.45e-06
+poverty                          -1.006e-05   4.29e-06     -2.343      0.019   -1.85e-05   -1.64e-06
+unemployment_rate                -2.363e-05   7.58e-06     -3.117      0.002   -3.85e-05   -8.77e-06
+education_graduate               -1.655e-06   4.02e-06     -0.412      0.680   -9.53e-06    6.22e-06
+race_black                        2.686e-06   2.09e-06      1.282      0.200   -1.42e-06    6.79e-06
+race_asian                       -1.859e-05   5.11e-06     -3.634      0.000   -2.86e-05   -8.56e-06
+hispanic                         -1.602e-05    2.2e-06     -7.291      0.000   -2.03e-05   -1.17e-05
+health_uninsured                  1.013e-05   5.73e-06      1.769      0.077   -1.09e-06    2.14e-05
+diabetes_obesity_population_rate     0.6109      0.025     24.279      0.000       0.562       0.660
+is_urban                             0.0002   8.45e-05      1.874      0.061   -7.27e-06       0.000
+==============================================================================
+Omnibus:                     5346.487   Durbin-Watson:                   0.470
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           209974.565
+Skew:                           4.070   Prob(JB):                         0.00
+Kurtosis:                      30.502   Cond. No.                     2.87e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.87e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Poisson GLM Results:
+                  Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:           glp1ra_count   No. Observations:                 6126
+Model:                            GLM   Df Residuals:                     6113
+Model Family:                 Poisson   Df Model:                           12
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -80755.
+Date:                Mon, 22 Dec 2025   Deviance:                   1.4023e+05
+Time:                        21:58:49   Pearson chi2:                 8.59e+05
+No. Iterations:                     6   Pseudo R-squ. (CS):             0.9982
+Covariance Type:            nonrobust                                         
+====================================================================================================
+                                       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+Intercept                           -6.1757      0.045   -138.068      0.000      -6.263      -6.088
+age_40s                             -0.0640      0.002    -34.843      0.000      -0.068      -0.060
+age_50s                              0.0612      0.001     48.538      0.000       0.059       0.064
+age_60s                              0.0321      0.001     23.417      0.000       0.029       0.035
+poverty                             -0.0040      0.001     -4.825      0.000      -0.006      -0.002
+unemployment_rate                   -0.0726      0.002    -33.974      0.000      -0.077      -0.068
+education_graduate                  -0.0338      0.001    -52.381      0.000      -0.035      -0.032
+race_black                          -0.0072      0.000    -23.422      0.000      -0.008      -0.007
+race_asian                          -0.0197      0.001    -28.102      0.000      -0.021      -0.018
+hispanic                            -0.0120      0.000    -36.195      0.000      -0.013      -0.011
+health_uninsured                     0.0020      0.001      2.063      0.039    9.88e-05       0.004
+diabetes_obesity_population_rate   203.4337      2.779     73.196      0.000     197.986     208.881
+is_urban                            -0.7066      0.013    -52.686      0.000      -0.733      -0.680
+====================================================================================================
+
+Negative Binomial GLM Results:
+                  Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:           glp1ra_count   No. Observations:                 6126
+Model:                            GLM   Df Residuals:                     6113
+Model Family:        NegativeBinomial   Df Model:                           12
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -24567.
+Date:                Mon, 22 Dec 2025   Deviance:                       15698.
+Time:                        21:58:50   Pearson chi2:                 6.72e+04
+No. Iterations:                   100   Pseudo R-squ. (CS):             0.4870
+Covariance Type:            nonrobust                                         
+====================================================================================================
+                                       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+Intercept                           -2.9744      0.109    -27.264      0.000      -3.188      -2.761
+age_40s                             -0.0786      0.004    -18.725      0.000      -0.087      -0.070
+age_50s                             -0.0347      0.003    -10.626      0.000      -0.041      -0.028
+age_60s                              0.0067      0.003      2.044      0.041       0.000       0.013
+poverty                             -0.0275      0.002    -12.789      0.000      -0.032      -0.023
+unemployment_rate                   -0.0160      0.005     -3.415      0.001      -0.025      -0.007
+education_graduate                  -0.0514      0.002    -27.685      0.000      -0.055      -0.048
+race_black                          -0.0072      0.001     -7.512      0.000      -0.009      -0.005
+race_asian                          -0.0453      0.002    -19.742      0.000      -0.050      -0.041
+hispanic                            -0.0164      0.001    -16.205      0.000      -0.018      -0.014
+health_uninsured                    -0.0061      0.003     -2.214      0.027      -0.012      -0.001
+diabetes_obesity_population_rate   243.8338     11.033     22.101      0.000     222.210     265.458
+is_urban                            -0.5879      0.039    -15.092      0.000      -0.664      -0.512
+====================================================================================================
+
+[Overdispersion Check]
+Mean of outcome: 10.220372184133202
+Variance of outcome: 234.2616322532931
+Variance/Mean: 22.921047104035676
+Dispersion (Deviance/df): 22.94029762916509
+Dispersion (Pearson/df): 140.51794509568384
+         Current function value: 3.296252
+         Iterations: 35
+         Function evaluations: 42
+         Gradient evaluations: 42
+
+Negative Binomial (discrete model) Results:
+                      NegativeBinomial Regression Results                      
+==============================================================================
+Dep. Variable:           glp1ra_count   No. Observations:                 6126
+Model:               NegativeBinomial   Df Residuals:                     6113
+Method:                           MLE   Df Model:                           12
+Date:                Mon, 22 Dec 2025   Pseudo R-squ.:                 0.01972
+Time:                        21:58:50   Log-Likelihood:                -20193.
+converged:                      False   LL-Null:                       -20599.
+Covariance Type:            nonrobust   LLR p-value:                3.748e-166
+====================================================================================================
+                                       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+const                                2.0785      0.102     20.372      0.000       1.879       2.279
+age_40s                             -0.0099      0.004     -2.752      0.006      -0.017      -0.003
+age_50s                              0.0073      0.003      2.289      0.022       0.001       0.014
+age_60s                             -0.0204      0.003     -7.172      0.000      -0.026      -0.015
+poverty                             -0.0118      0.002     -5.782      0.000      -0.016      -0.008
+unemployment_rate                   -0.0134      0.004     -3.680      0.000      -0.021      -0.006
+education_graduate                   0.0002      0.002      0.080      0.936      -0.004       0.004
+race_black                           0.0047      0.001      5.053      0.000       0.003       0.007
+race_asian                           0.0045      0.002      1.985      0.047    5.55e-05       0.009
+hispanic                             0.0053      0.001      5.311      0.000       0.003       0.007
+health_uninsured                     0.0019      0.003      0.708      0.479      -0.003       0.007
+diabetes_obesity_population_rate   210.9431     12.870     16.391      0.000     185.719     236.167
+is_urban                             0.3327      0.040      8.380      0.000       0.255       0.411
+alpha                                1.0703      0.020     54.622      0.000       1.032       1.109
+====================================================================================================
+
+Estimated alpha (overdispersion): 1.0702825249183407
+
+Ridge R^2: 0.10149713087279355
+Lasso R^2: 0.03780711869574194
+ElasticNet R^2: 0.03798695977196642
+
+Random Forest R^2: 0.5118574538583758
+Gradient Boosting R^2: 0.5113441264710239
+
+================================================================================
+Random Forest Feature Importance:
+================================================================================
+diabetes_obesity_population_rate   0.3865 (38.65%)
+hispanic                    0.0929 ( 9.29%)
+poverty                     0.0892 ( 8.92%)
+age_50s                     0.0793 ( 7.93%)
+education_graduate          0.0562 ( 5.62%)
+unemployment_rate           0.0522 ( 5.22%)
+age_60s                     0.0512 ( 5.12%)
+age_40s                     0.0506 ( 5.06%)
+health_uninsured            0.0494 ( 4.94%)
+race_black                  0.0436 ( 4.36%)
+race_asian                  0.0435 ( 4.35%)
+is_urban                    0.0054 ( 0.54%)
+
+================================================================================
+Gradient Boosting Feature Importance:
+================================================================================
+diabetes_obesity_population_rate   0.3768 (37.68%)
+age_50s                     0.1090 (10.90%)
+hispanic                    0.1081 (10.81%)
+poverty                     0.1017 (10.17%)
+age_40s                     0.0612 ( 6.12%)
+education_graduate          0.0505 ( 5.05%)
+health_uninsured            0.0448 ( 4.48%)
+unemployment_rate           0.0448 ( 4.48%)
+race_asian                  0.0399 ( 3.99%)
+race_black                  0.0314 ( 3.14%)
+age_60s                     0.0294 ( 2.94%)
+is_urban                    0.0023 ( 0.23%)
